@@ -8,6 +8,9 @@ git clone git@github.com:whess96/dotfiles.git ~/.dotfiles
 ```
 Source the `setup.sh` script to set the necessary env vars and bootstrap the setup.
 (TODO: Set symlinks here)
+```
+. ~/.dotfiles/setup.sh
+```
 
 ### Setup vim
 Create a new `undodir`
