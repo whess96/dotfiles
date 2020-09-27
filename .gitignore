@@ -1,6 +1,8 @@
-# Ignore various machine specific vim files 
+# Machine specific vim files 
 .vim/undodir
 .vim/bundle
 .vim/.netrwhist
 .vim/viminfo
 
+# Machine specific zsh files 
+.zsh/.zsh_history
