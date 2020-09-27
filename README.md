@@ -6,8 +6,9 @@ Clone this repo into the home directory
 ```
 git clone git@github.com:whess96/dotfiles.git ~/.dotfiles
 ```
-### Setup vim
-Create a new `undodir`.
+Source the `setup.sh` script to set the necessary env vars and bootstrap the setup.
+(TODO: Set symlinks here)
 ```
-mkdir ~/.vim/undodir
+. ~/.dotfiles/setup.sh
 ```
+
