@@ -1,0 +1,67 @@
+set nocompatible " Enables no-vi features
+filetype off
+
+" --Vundle--
+"Vundle bootstrap
+if !filereadable($HOME . '/.vim/bundle/Vundle.vim/.git/config') && confirm("Clone Vundle?","Y\nn") == 1
+    exec '!git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim/'
+    echo "Run :PluginInstall in vim"
+endif
+
+set rtp+=~/.vim/bundle/Vundle.vim" set the runtime path to include Vundle
+call vundle#begin() 
+
+" Let Vundle manange itself:
+Plugin 'VundleVim/Vundle.vim'
+
+" Markdown plugin & tabular dependency
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" Filetree plugin
+Plugin 'preservim/nerdtree'
+
+call vundle#end()
+" ---------
+
+filetype plugin indent on " Filetype auto-detection
+syntax on "Syntax highlighting
+set encoding=utf-8
+
+color dracula
+
+" Reset space key as leader
+let mapleader = " " 
+
+set number relativenumber " Show current line-number & relative #s
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab " Replace tabs w/ spaces
+set smartindent 
+set nowrap
+set ignorecase " Ignore case when searching
+set smartcase " ...unless something in search is capitalized
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+
+set colorcolumn=120
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+set clipboard^=unnamed,unnamedplus
+
+" Add spellcheck
+nnoremap <leader>f 1z=
+nnoremap <leader>s :set spell! spelllang=en_us
+
+" Set highlight on search
+set hlsearch
+nnoremap <leader>n :noh
+
+" Markdown Settings 
+let g:vim_markdown_folding_disabled = 1
+set conceallevel=2
+
