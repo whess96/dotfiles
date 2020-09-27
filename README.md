@@ -12,8 +12,3 @@ Source the `setup.sh` script to set the necessary env vars and bootstrap the set
 . ~/.dotfiles/setup.sh
 ```
 
-### Setup vim
-Create a new `undodir`
-```
-mkdir ~/.dotfiles/.vim/undodir
-```
