@@ -12,7 +12,7 @@ export DOTDIR=$HOME/.dotfiles
 [ ! -L $HOME"/.vimrc" ] && ln -sv $DOTDIR"/.vim/vimrc" $HOME"/.vimrc"
 
 # Setup zsh
-omz=$HOME/.oh-my-zsh
+omz=$DOTDIR/.zsh/.oh-my-zsh
 zsh_custom=$omz/custom
 dir_exists $omz || git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 dir_exists $zsh_custom/themes/powerlevel10k ||  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $zsh_custom/themes/powerlevel10k

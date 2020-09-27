@@ -10,7 +10,7 @@ export DOTDIR=$HOME/.dotfiles
 export DOTZSH=$DOTDIR/.zsh
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME"/.oh-my-zsh"
+export ZSH=$DOTZSH"/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -84,6 +84,50 @@ autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 # User configuration
+
+# Add Go Path and Root
+export GOPATH=$HOME/go
+PATH=$GOPATH/bin:$PATH
+export GOROOT=/usr/local/go
+
+# Add Java Path
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# Maven credentials
+export MAVEN_READ_USERNAME=whess96
+export MAVEN_READ_PASSWORD=3785b3c42fe23ab8293d376776a5d03f5539a982
+
+# Add Anaconda Path
+PATH=/opt/anaconda3/bin:$PATH
+
+# Add general local bin path
+PATH=$PATH:/usr/local/bin/
+
+# Add nix path
+NIX_PATH=nixpkgs=/Users/whess/Documents/AndurilCode/anduril-nixpkgs
+if [ -e /Users/whess/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/whess/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Add nvm path
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm use 12.13.0 >/dev/null
+
+## Set up GPG
+gpgconf --kill gpg-agent
+eval $(gpg-agent --daemon)
+GPG_TTY=$(tty)
+export GPG_TTY
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+
+export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+## Local build quay tags
+export LOCAL_BUILD_TAG=whess
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
