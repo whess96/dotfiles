@@ -107,5 +107,5 @@ zmodload -i zsh/complist
 #
 source $HOME/.aliases.sh
 
-# To customize prompt, run `p10k configure` or edit $DOTDIR/.p10k.zsh.
+# To customize prompt, run `p10k configure` or edit $DOTZSH/.p10k.zsh.
 [[ ! -f $DOTZSH/.p10k.zsh ]] || source $DOTZSH/.p10k.zsh
