@@ -1,14 +1,16 @@
 set nocompatible " Enables no-vi features
 filetype off
+set rtp+=$DOTDIR/.vim
+set viminfo+=n$DOTDIR/.vim/viminfo
 
 " --Vundle--
 "Vundle bootstrap
-if !filereadable($HOME . '/.vim/bundle/Vundle.vim/.git/config') && confirm("Clone Vundle?","Y\nn") == 1
-    exec '!git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim/'
+if !filereadable($DOTDIR . '/.vim/bundle/Vundle.vim/.git/config') && confirm("Clone Vundle?","Y\nn") == 1
+    exec '!git clone https://github.com/gmarik/Vundle.vim $DOTDIR/.vim/bundle/Vundle.vim/'
     echo "Run :PluginInstall in vim"
 endif
 
-set rtp+=~/.vim/bundle/Vundle.vim" set the runtime path to include Vundle
+set rtp+=$DOTDIR/.vim/bundle/Vundle.vim " set the runtime path to include Vundle
 call vundle#begin() 
 
 " Let Vundle manange itself:
