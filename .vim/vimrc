@@ -11,7 +11,7 @@ if !filereadable($DOTDIR . '/.vim/bundle/Vundle.vim/.git/config') && confirm("Cl
 endif
 
 set rtp+=$DOTDIR/.vim/bundle/Vundle.vim " set the runtime path to include Vundle
-call vundle#begin() 
+call vundle#begin($DOTDIR."/.vim/bundle") 
 
 " Let Vundle manange itself:
 Plugin 'VundleVim/Vundle.vim'
@@ -22,6 +22,9 @@ Plugin 'plasticboy/vim-markdown'
 
 " Filetree plugin
 Plugin 'preservim/nerdtree'
+
+" YouCompleteMe
+Plugin 'valloric/youcompleteme'
 
 call vundle#end()
 " ---------

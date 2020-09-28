@@ -7,3 +7,6 @@
 # Machine specific zsh files 
 .zsh/.zsh_history
 .zsh/.oh-my-zsh
+
+# Ingore creds
+creds/

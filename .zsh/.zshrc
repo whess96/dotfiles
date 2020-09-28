@@ -93,8 +93,7 @@ export GOROOT=/usr/local/go
 # Add Java Path
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # Maven credentials
-export MAVEN_READ_USERNAME=whess96
-export MAVEN_READ_PASSWORD=3785b3c42fe23ab8293d376776a5d03f5539a982
+source $DOTDIR/creds/creds.sh
 
 # Add Anaconda Path
 PATH=/opt/anaconda3/bin:$PATH
