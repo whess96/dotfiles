@@ -128,6 +128,10 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 ## Local build quay tags
 export LOCAL_BUILD_TAG=whess
 
+## Use vi key bindindgs in zsh
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -148,6 +152,7 @@ export LOCAL_BUILD_TAG=whess
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+
 source $HOME/.aliases.sh
 
 # To customize prompt, run `p10k configure` or edit $DOTZSH/.p10k.zsh.

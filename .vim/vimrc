@@ -2,6 +2,7 @@ set nocompatible " Enables no-vi features
 filetype off
 set rtp+=$DOTDIR/.vim
 set viminfo+=n$DOTDIR/.vim/viminfo
+set shell=/bin/zsh
 
 " --Vundle--
 "Vundle bootstrap
@@ -11,7 +12,7 @@ if !filereadable($DOTDIR . '/.vim/bundle/Vundle.vim/.git/config') && confirm("Cl
 endif
 
 set rtp+=$DOTDIR/.vim/bundle/Vundle.vim " set the runtime path to include Vundle
-call vundle#begin($DOTDIR."/.vim/bundle") 
+call vundle#begin($DOTDIR."/.vim/bundle")
 
 " Let Vundle manange itself:
 Plugin 'VundleVim/Vundle.vim'
@@ -26,6 +27,19 @@ Plugin 'preservim/nerdtree'
 " YouCompleteMe
 Plugin 'valloric/youcompleteme'
 
+" Surround plugin
+Plugin 'tpope/vim-surround'
+
+" Go support
+Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" Nice line on the bottom of the screen
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Color schema
+Plugin 'dracula/vim',{'name':'dracula'}
+
 call vundle#end()
 " ---------
 
@@ -33,29 +47,45 @@ filetype plugin indent on " Filetype auto-detection
 syntax on "Syntax highlighting
 set encoding=utf-8
 
-color dracula
+" Set color-scheme
+let g:dracula_italic = 0
+colorscheme dracula
+highlight Normal ctermbg=None
+
+" Configure air-line
+let g:airline_theme='dracula'
 
 " Reset space key as leader
-let mapleader = " " 
+let mapleader = " "
 
 set number relativenumber " Show current line-number & relative #s
 set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab " Replace tabs w/ spaces
-set smartindent 
+
+" Configure tabs as 2 spaces
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set smartindent
+
+" Default to nowrap, toggle with Space+w
 set nowrap
+nnoremap <leader>w :set wrap!
+
+" Configure search
 set ignorecase " Ignore case when searching
 set smartcase " ...unless something in search is capitalized
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
+set incsearch " Highlight search matches as you type
 
-set colorcolumn=120
+" Use an undodir to allow for undo after closing vim
+set nobackup
+set undodir=$DOTDIR/.vim/undodir
+set undofile
+
+" Set a dark column at col 120
+set colorcolumn=121
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-
+" Yank and paste to/from normal clipboard
 set clipboard^=unnamed,unnamedplus
 
 " Add spellcheck
@@ -64,9 +94,23 @@ nnoremap <leader>s :set spell! spelllang=en_us
 
 " Set highlight on search
 set hlsearch
-nnoremap <leader>n :noh
+nnoremap <leader>h :noh<CR>
 
-" Markdown Settings 
+" Markdown Settings
 let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
+set linebreak
+" formatoptions+=rt
+
+" Toggle Nerdtree
+nnoremap <leader>t :NERDTreeToggle
+
+" Navigate tabs w/ <C-{jk}>
+nnoremap <C-j> :tabnext<CR>
+nnoremap <C-k> :tabprev<CR>
+nnoremap <C-n> :tabnew<CR>
+
+" Navigate windows w/ <C-{hl}>
+map <C-l> :wincmd l<CR>
+map <C-h> :wincmd h<CR>
 
