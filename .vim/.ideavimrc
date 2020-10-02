@@ -14,3 +14,35 @@ nnoremap <leader>h :noh<CR>
 nnoremap <C-k> :tabnext<CR>
 nnoremap <C-j> :tabprev<CR>
 
+"" Better movement
+" Skip paragraphs with J & K, Beginning/End of line H & L
+map $ <Nop>
+map ^ <Nop>
+map { <Nop>
+map } <Nop>
+
+nnoremap K {
+nnoremap J }
+nnoremap H ^
+nnoremap L $
+
+"" Better indenting
+nmap >> <Nop>
+nmap << <Nop>
+vmap >> <Nop>
+vmap << <Nop>
+
+nnoremap <Tab>    >>
+nnoremap <S-Tab>  <<
+vnoremap <Tab>    >><Esc>gv
+vnoremap <S-Tab>  <<<Esc>gv
+
+" Pair braces
+inoremap <> <><Left>
+inoremap () ()<Left>
+inoremap {} {}<Left>
+inoremap [] []<Left>
+inoremap "" ""<Left>
+inoremap '' ''<Left>
+inoremap `` ``<Left>
+

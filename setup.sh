@@ -10,7 +10,7 @@ export DOTDIR=$HOME/.dotfiles
 # Setup vim
 [ ! -d $DOTDIR"/.vim/undodir" ] && mkdir $DOTDIR"/.vim/undodir"
 [ ! -L $HOME"/.vimrc" ] && ln -sv $DOTDIR"/.vim/vimrc" $HOME"/.vimrc"
-[ ! -L $HOME"/.ideavimrc" ] && ln -sv $DOTDIR"/.vim/ideavimrc" $HOME"/.ideavimrc"
+[ ! -L $HOME"/.ideavimrc" ] && ln -sv $DOTDIR"/.vim/.ideavimrc" $HOME"/.ideavimrc"
 
 # Setup zsh
 omz=$DOTDIR/.zsh/.oh-my-zsh
