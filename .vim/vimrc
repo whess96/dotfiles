@@ -64,7 +64,7 @@ set noerrorbells
 " Configure tabs as 2 spaces
 set expandtab
 set shiftwidth=2
-set softtabstop=2
+set softtabstop=2 tabstop=2
 set smartindent
 
 " Default to nowrap, toggle with Space+w
@@ -113,4 +113,7 @@ nnoremap <C-n> :tabnew<CR>
 " Navigate windows w/ <C-{hl}>
 map <C-l> :wincmd l<CR>
 map <C-h> :wincmd h<CR>
+
+" Use <C-[> to pop back to previous use.
+map <C-[> :GoDefPop<CR> 
 
