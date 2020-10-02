@@ -1,0 +1,16 @@
+" Reset space key as leader
+let mapleader = " "
+
+set number relativenumber
+
+" Search settings
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+nnoremap <leader>h :noh<CR>
+
+" Navigate tabs w/ <C-{hl}>
+nnoremap <C-k> :tabnext<CR>
+nnoremap <C-j> :tabprev<CR>
+
