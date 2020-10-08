@@ -69,7 +69,7 @@ set smartindent
 
 " Default to nowrap, toggle with Space+w
 set nowrap
-nnoremap <leader>w :set wrap!
+nnoremap <leader>w :set wrap!<CR>
 
 " Configure search
 set ignorecase " Ignore case when searching
@@ -106,8 +106,8 @@ set linebreak
 nnoremap <leader>t :NERDTreeToggle
 
 " Navigate tabs w/ <C-{jk}>
-nnoremap <C-j> :tabnext<CR>
 nnoremap <C-k> :tabprev<CR>
+nnoremap <C-j> :tabnext<CR>
 nnoremap <C-n> :tabnew<CR>
 
 " Navigate windows w/ <C-{hl}>
@@ -115,16 +115,10 @@ map <C-l> :wincmd l<CR>
 map <C-h> :wincmd h<CR>
 
 "" Better movement
-" Skip paragraphs with J & K, Beginning/End of line H & L
-map $ <Nop>
-map ^ <Nop>
-map { <Nop>
-map } <Nop>
-
-nnoremap K {
-nnoremap J }
-nnoremap H ^
-nnoremap L $
+map K <C-u>
+map J <C-d>
+map H ^
+map L $
 
 "" Better indenting
 nmap >> <Nop>

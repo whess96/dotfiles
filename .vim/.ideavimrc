@@ -11,20 +11,15 @@ set hlsearch
 nnoremap <leader>h :noh<CR>
 
 " Navigate tabs w/ <C-{hl}>
-nnoremap <C-k> :tabnext<CR>
-nnoremap <C-j> :tabprev<CR>
+nnoremap <C-l> :tabnext<CR>
+nnoremap <C-h> :tabprev<CR>
 
 "" Better movement
-" Skip paragraphs with J & K, Beginning/End of line H & L
-map $ <Nop>
-map ^ <Nop>
-map { <Nop>
-map } <Nop>
-
-nnoremap K {
-nnoremap J }
-nnoremap H ^
-nnoremap L $
+" Page up/down with J & K, Beginning/End of line H & L
+map K <C-u>
+map J <C-d>
+map H ^
+map L $
 
 "" Better indenting
 nmap >> <Nop>
