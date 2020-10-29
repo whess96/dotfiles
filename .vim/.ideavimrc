@@ -11,13 +11,15 @@ set hlsearch
 nnoremap <leader>h :noh<CR>
 
 " Navigate tabs w/ <C-{hl}>
-nnoremap <C-l> :tabnext<CR>
-nnoremap <C-h> :tabprev<CR>
+nnoremap <C-j> :tabprev<CR>
+nnoremap <C-k> :tabnext<CR>
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 "" Better movement
 " Page up/down with J & K, Beginning/End of line H & L
-map K <C-u>
-map J <C-d>
+"map K <C-u>
+"map J <C-d>
 map H ^
 map L $
 
@@ -31,13 +33,4 @@ nnoremap <Tab>    >>
 nnoremap <S-Tab>  <<
 vnoremap <Tab>    >><Esc>gv
 vnoremap <S-Tab>  <<<Esc>gv
-
-" Pair braces
-inoremap <> <><Left>
-inoremap () ()<Left>
-inoremap {} {}<Left>
-inoremap [] []<Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap `` ``<Left>
 

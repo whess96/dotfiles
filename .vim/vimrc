@@ -23,6 +23,7 @@ Plugin 'plasticboy/vim-markdown'
 
 " Filetree plugin
 Plugin 'preservim/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " YouCompleteMe
 Plugin 'valloric/youcompleteme'
@@ -39,6 +40,13 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " Color schema
 Plugin 'dracula/vim',{'name':'dracula'}
+
+" Fuzzy find
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+
+" Smooth scrolling
+Plugin 'terryma/vim-smooth-scroll'
 
 call vundle#end()
 " ---------
@@ -89,8 +97,8 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set clipboard^=unnamed,unnamedplus
 
 " Add spellcheck
-nnoremap <leader>f 1z=
-nnoremap <leader>s :set spell! spelllang=en_us
+nnoremap <leader>z 1z=
+nnoremap <leader>s :set spell! spelllang=en_us<CR>
 
 " Set highlight on search
 set hlsearch
@@ -103,7 +111,8 @@ set linebreak
 " formatoptions+=rt
 
 " Toggle Nerdtree
-nnoremap <leader>t :NERDTreeToggle
+nnoremap <leader>t :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " Navigate tabs w/ <C-{jk}>
 nnoremap <C-k> :tabprev<CR>
@@ -115,10 +124,14 @@ map <C-l> :wincmd l<CR>
 map <C-h> :wincmd h<CR>
 
 "" Better movement
-map K <C-u>
-map J <C-d>
 map H ^
 map L $
+
+" Smooth scrolling
+noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 "" Better indenting
 nmap >> <Nop>
@@ -139,4 +152,9 @@ inoremap [] []<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
 inoremap `` ``<Left>
+
+" fzf remappings
+nnoremap <silent> <leader>o :Files<CR>
+nnoremap <silent> <leader>f :Rg<CR>
+
 
