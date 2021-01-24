@@ -17,9 +17,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
 "" Better movement
-" Page up/down with J & K, Beginning/End of line H & L
-"map K <C-u>
-"map J <C-d>
+" Beginning/End of line H & L
 map H ^
 map L $
 
@@ -34,3 +32,15 @@ nnoremap <S-Tab>  <<
 vnoremap <Tab>    >><Esc>gv
 vnoremap <S-Tab>  <<<Esc>gv
 
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+
+" enable surround plugin emulation
+set surround
+" enable commentary plugin emulation
+set commentary
