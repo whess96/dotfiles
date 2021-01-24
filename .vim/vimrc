@@ -48,6 +48,9 @@ Plugin 'junegunn/fzf.vim'
 " Smooth scrolling
 Plugin 'terryma/vim-smooth-scroll'
 
+" Sign Column git diff
+Plugin 'airblade/vim-gitgutter'
+
 call vundle#end()
 " ---------
 
