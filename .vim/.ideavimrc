@@ -32,14 +32,6 @@ nnoremap <S-Tab>  <<
 vnoremap <Tab>    >><Esc>gv
 vnoremap <S-Tab>  <<<Esc>gv
 
-" delete without yanking
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-
-" replace currently selected text with default register
-" without yanking it
-vnoremap <leader>p "_dP
-
 " enable surround plugin emulation
 set surround
 " enable commentary plugin emulation
