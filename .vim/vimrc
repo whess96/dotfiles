@@ -163,4 +163,11 @@ inoremap `` ``<Left>
 nnoremap <silent> <leader>o :Files<CR>
 nnoremap <silent> <leader>f :Rg<CR>
 
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
 
