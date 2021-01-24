@@ -57,12 +57,11 @@ Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 " ---------
 
-filetype plugin indent on " Filetype auto-detection
+filetype plugin on
 syntax on "Syntax highlighting
 set encoding=utf-8
 
 " Set color-scheme
-let g:dracula_italic = 0
 colorscheme dracula
 highlight Normal ctermbg=None
 
