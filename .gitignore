@@ -1,12 +1,15 @@
-# Machine specific vim files 
+# Machine specific vim files
 .vim/undodir
 .vim/bundle
 .vim/.netrwhist
 .vim/viminfo
 
-# Machine specific zsh files 
+# Machine specific zsh files
 .zsh/.zsh_history
 .zsh/.oh-my-zsh
 
 # Ingore creds
 creds/
+
+# Other crap
+.idea/

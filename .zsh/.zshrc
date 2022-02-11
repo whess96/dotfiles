@@ -88,6 +88,7 @@ zmodload -i zsh/complist
 # Add Go Path and Root
 export GOPATH=$HOME/go
 PATH=$GOPATH/bin:$PATH
+PATH=/usr/local/go/bin:$PATH
 export GOROOT=/usr/local/go
 
 # Add Java Path

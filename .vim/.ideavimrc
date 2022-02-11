@@ -10,7 +10,7 @@ set incsearch
 set hlsearch
 nnoremap <leader>h :noh<CR>
 
-" Navigate tabs w/ <C-{hl}>
+" Navigate tabs & windows w/ <C-{jkhl}>
 nnoremap <C-j> :tabprev<CR>
 nnoremap <C-k> :tabnext<CR>
 nnoremap <C-h> <C-W>h
@@ -44,3 +44,5 @@ vnoremap <leader>p "_dP
 set surround
 " enable commentary plugin emulation
 set commentary
+" enable vim key bindings in the tree
+set NERDTree
