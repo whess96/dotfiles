@@ -34,6 +34,9 @@ Plugin 'tpope/vim-surround'
 " Commentary plugin
 Plugin 'tpope/vim-commentary'
 
+" Git support
+Plugin 'tpope/vim-fugitive'
+
 " Go support
 Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
