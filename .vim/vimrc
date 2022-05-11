@@ -57,6 +57,9 @@ Plugin 'terryma/vim-smooth-scroll'
 " Sign Column git diff
 Plugin 'airblade/vim-gitgutter'
 
+" GitLink
+Plugin 'iautom8things/gitlink-vim'
+
 call vundle#end()
 " ---------
 
@@ -179,3 +182,11 @@ vnoremap <leader>d "_d
 " without yanking it
 vnoremap <leader>p "_dP
 
+" Configure copy GitLink command
+function! CopyGitLink(...) range
+  redir @+
+  silent echo gitlink#GitLink(get(a:, 1, 0))
+  redir END
+endfunction
+nmap <leader>gl :call CopyGitLink()<CR>
+vmap <leader>gl :call CopyGitLink(1)<CR>
