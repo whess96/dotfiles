@@ -92,7 +92,7 @@ PATH=/usr/local/go/bin:$PATH
 export GOROOT=/usr/local/go
 
 # Add Java Path
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 # Maven credentials
 source $DOTDIR/creds/creds.sh
 
@@ -132,6 +132,18 @@ export LOCAL_BUILD_TAG=whess
 ## Use vi key bindindgs in zsh
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+
+### Fix slowness of pastes with zsh-syntax-highlighting.zsh
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
